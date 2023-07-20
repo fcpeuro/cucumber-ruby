@@ -127,7 +127,7 @@ module Cucumber
         duration = ResultBuilder.new(result).test_case_duration
         @current_feature_data[:time] += duration
         classname = @current_feature_data[:feature].name
-        filename = @current_feature_data[:feature].file
+        filename = @current_feature_data[:feature].file.gsub(/.*\//, '')
         name = scenario_designation
 
         @current_feature_data[:builder].testcase(:classname => classname, :name => name, :time => format('%.6f', duration), :filename => filename) do
