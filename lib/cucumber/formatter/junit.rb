@@ -95,8 +95,8 @@ module Cucumber
           :skipped => feature_data[:skipped],
           :tests => feature_data[:tests],
           :time => format('%.6f', feature_data[:time]),
-          :name => feature_data[:feature].name
-        ) do
+          :file => feature_data[:feature].file,
+          :name => feature_data[:feature].name ) do
           @testsuite << feature_data[:builder].target!
         end
 
